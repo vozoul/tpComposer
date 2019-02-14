@@ -3,7 +3,7 @@
 namespace App;
 
 
-class Animal{
+abstract class Animal{
     private $name;
 
     /**
@@ -17,7 +17,7 @@ class Animal{
     /**
      * @return mixed
      */
-    protected function getName(){
+    public function getName(){
         return $this->name;
     }
 
@@ -30,6 +30,6 @@ class Animal{
      * @return mixed
      */
     public function noise(){
-        return $this->getNoise();
+        return $this->getNoise()."\n";
     }
 }

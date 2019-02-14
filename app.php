@@ -43,3 +43,5 @@ $animals = [
 foreach ($animals as $animal){
     echo $animal->getName() . " Fait " . $animal->noise();
 }
+
+
