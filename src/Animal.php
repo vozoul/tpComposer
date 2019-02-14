@@ -22,14 +22,14 @@ class Animal{
     }
 
     /**
+     * @return string
+     */
+    protected abstract function getNoise():string;
+
+    /**
      * @return mixed
      */
     public function noise(){
         return $this->getNoise();
     }
-
-    /**
-     * @return string
-     */
-    protected abstract function getNoise():string;
 }
