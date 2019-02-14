@@ -1,4 +1,5 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
 
 use App\Animals\BubbleFish;
 use App\Animals\CatFish;
@@ -9,7 +10,6 @@ use App\Animals\Zebra;
 use App\Animals\Parrot;
 use App\Animals\Dove;
 
-require __DIR__ . '/vendor/autoload.php';
 
 $animals = [
     new Fish('raymond'),
