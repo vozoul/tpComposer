@@ -26,6 +26,7 @@ zoo::addAnimal(new ClownFish('jennie'));
 zoo::addAnimal(new Elephant('arthur'));
 zoo::addAnimal(new Elephant('john'));
 zoo::addAnimal(new Zebra('sultan'));
+
 zoo::addAnimal(new Parrot('jim'));
 zoo::addAnimal(new Parrot('noam'));
 zoo::addAnimal(new Parrot('coco'));

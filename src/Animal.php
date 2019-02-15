@@ -27,7 +27,7 @@ abstract class Animal{
     protected abstract function getNoise():string;
 
     /**
-     * @return mixed
+     * @return string
      */
     public function noise(){
         return $this->getNoise()."\n";

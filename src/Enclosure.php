@@ -10,12 +10,13 @@ class Enclosure{
     }
 
     public function __toString(): string{
-        $echo = "The animal :";
+        $echo = "";
         foreach($this->animals as $animal){
+            $echo .= "The animal: ";
             $echo .= $animal->getName()." do this noise: ";
             $echo .= $animal->noise();
         }
-        echo $echo;
+        return $echo;
     }
 
 }

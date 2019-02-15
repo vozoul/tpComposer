@@ -19,25 +19,16 @@ class Zoo
     private static $Aquarium = null;
     private static $Fence = null;
 
-    /**
-     * @return null
-     */
     public static function getAviary()
     {
         return self::$Aviary;
     }
 
-    /**
-     * @return null
-     */
     public static function getAquarium()
     {
         return self::$Aquarium;
     }
 
-    /**
-     * @return null
-     */
     public static function getFence()
     {
         return self::$Fence;
@@ -45,19 +36,17 @@ class Zoo
 
     public static function addAnimal(Animal $animal)
     {
-        if ($animal instanceof CanFly) {
-            if(self::$Aviary === null){
-                self::$Aviary = new Enclosure();
-            }
-            self::$Aviary->addAnimal($animal);
-        }
-        if ($animal instanceof CanSwim && !$animal instanceof CanWalk){
+        if(($animal instanceof CanSwim) && !($animal instanceof CanWalk) && !($animal instanceof CanFly)){
             if(self::$Aquarium === null){
                 self::$Aquarium = new Enclosure();
             }
             self::$Aquarium->addAnimal($animal);
-        }
-        if ($animal instanceof CanWalk && !$animal instanceof CanFly){
+        }elseif($animal instanceof CanFly){
+            if(self::$Aviary === null){
+                self::$Aviary = new Enclosure();
+            }
+            self::$Aviary->addAnimal($animal);
+        }elseif($animal instanceof CanWalk){
             if(self::$Fence === null){
                 self::$Fence = new Enclosure();
             }
@@ -67,18 +56,16 @@ class Zoo
 
     public static function visitTheZoo(){
         if(self::$Aquarium != null){
-
-            //var_dump(self::getAquarium());
-            echo "Voici notre bel Aquarium avec".self::getAquarium();
-
-        }elseif(self::$Aviary != null){
-
-            echo "Voici notre belle Volière avec".self::getAviary();
-
-        }elseif(self::$Fence != null){
-
-            echo "Voici notre bel Enclos avec".self::getFence();
-
+            echo "Voici notre bel Aquarium avec: "."\n";
+            echo self::getAquarium();
+        }
+        if(self::$Aviary != null){
+            echo "Voici notre belle Volière avec; "."\n";
+            echo self::getAviary();
+        }
+        if(self::$Fence != null){
+            echo "Voici notre bel Enclos avec: "."\n";
+            echo self::getFence();
         }
     }
 }
