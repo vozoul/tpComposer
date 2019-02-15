@@ -2,9 +2,8 @@
 require __DIR__ . '/vendor/autoload.php';
 
 use App\Animals\{
-    BubbleFish, CatFish, ClownFish, Elephant, Fish, Zebra, Parrot, Dove
+    BubbleFish, CatFish, ClownFish, Dove, Elephant, Fish, Parrot, Whale, Zebra
 };
-use App\Enclosure;
 
 $animals = [
     new Fish('raymond'),
@@ -34,11 +33,4 @@ $animals = [
     new Dove('toc'),
     new Dove('twity')
 ];
-
-foreach ($animals as $animal){
-    //echo $animal->getName() . " Fait " . $animal->noise();
-    enclosure::addAnimal($animal);
-    enclosure::toString();
-}
-
 
