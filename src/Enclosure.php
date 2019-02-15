@@ -1,21 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Vin's
- * Date: 14/02/2019
- * Time: 19:03
- */
 
 namespace App;
 
-class Enclosure
-{
-    public static $animals = [];
+class Enclosure{
+    private $animals = [];
 
-    public static function addAnimal($animal){
+    public function addAnimal(Animal $animal){
+        $this->animals[] = $animal;
     }
 
-    public static function toString(){
+    public function __toString(): string{
+        $echo = "The animal :";
+        foreach($this->animals as $animal){
+            $echo .= $animal->getName()." do this noise: ";
+            $echo .= $animal->noise();
+        }
+        echo $echo;
     }
 
 }
