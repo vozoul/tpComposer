@@ -13,11 +13,9 @@ class Enclosure
     public static $animals = [];
 
     public static function addAnimal($animal){
-        return static::$animals[] = $animal;
     }
 
     public static function toString(){
-        var_dump(static::$animals);
     }
 
 }
