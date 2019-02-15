@@ -1,15 +1,10 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-use App\Animals\BubbleFish;
-use App\Animals\CatFish;
-use App\Animals\ClownFish;
-use App\Animals\Elephant;
-use App\Animals\Fish;
-use App\Animals\Zebra;
-use App\Animals\Parrot;
-use App\Animals\Dove;
-
+use App\Animals\{
+    BubbleFish, CatFish, ClownFish, Elephant, Fish, Zebra, Parrot, Dove
+};
+use App\Enclosure;
 
 $animals = [
     new Fish('raymond'),
@@ -41,7 +36,9 @@ $animals = [
 ];
 
 foreach ($animals as $animal){
-    echo $animal->getName() . " Fait " . $animal->noise();
+    //echo $animal->getName() . " Fait " . $animal->noise();
+    enclosure::addAnimal($animal);
+    enclosure::toString();
 }
 
 
